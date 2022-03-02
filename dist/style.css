@@ -3,33 +3,28 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: black;
-}
-
-.svg {
+    background: #000000;
+  }
+  
+  .svg {
     width: 400px;
-
-}
-
-@media (max-height: 400px) {
+  }
+  @media (max-height: 400px) {
     .svg {
-        width: 250px;
+      width: 250px;
     }
-}
-
-.svg .paths {
+  }
+  .svg .paths {
     display: none;
-}
-
-.svg .circle {
-    fill: white;
-}
-
-.svg .gooey .circles {
-    filter: url("#filter");;
-}
-
-.controller {
+  }
+  .svg .circle {
+    fill: #ffffff;
+  }
+  .svg.gooey .circles {
+    filter: url("#filter");
+  }
+  
+  .controller {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -40,22 +35,19 @@ body {
     padding: 15px 20px 12px 15px;
     background: #fff;
     border-radius: 20px;
-}
-
-@media (max-height: 400px) {
+  }
+  @media (max-height: 400px) {
     .controller {
-        top: 10px;
-        right: 10px;
+      top: 10px;
+      right: 10px;
     }
-}
-
-.controller span {
+  }
+  .controller span {
     display: inline-block;
     position: relative;
     z-index: 1;
-}
-
-.controller span::before {
+  }
+  .controller span:before {
     content: "";
     position: absolute;
     top: -3px;
@@ -65,13 +57,12 @@ body {
     background: red;
     border-radius: 3px;
     -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  cursor: pointer;
-}
-
-.controller span::after {
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    cursor: pointer;
+  }
+  .controller span:after {
     content: "";
     background: #fff;
     position: absolute;
@@ -83,13 +74,11 @@ body {
     border-radius: 2px;
     opacity: 0;
     transition: opacity 0.2s ease-out;
-}
-
-.controller input {
+  }
+  .controller input {
     opacity: 0.01;
     height: 0;
-}
-
-.controller input:checked + span:after {
+  }
+  .controller input:checked + span:after {
     opacity: 1;
-}
+  }
