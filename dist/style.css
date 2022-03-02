@@ -1,0 +1,95 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+
+.svg {
+    width: 400px;
+
+}
+
+@media (max-height: 400px) {
+    .svg {
+        width: 250px;
+    }
+}
+
+.svg .paths {
+    display: none;
+}
+
+.svg .circle {
+    fill: white;
+}
+
+.svg .gooey .circles {
+    filter: url("#filter");;
+}
+
+.controller {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #000;
+    font-family: sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 15px 20px 12px 15px;
+    background: #fff;
+    border-radius: 20px;
+}
+
+@media (max-height: 400px) {
+    .controller {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+.controller span {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+.controller span::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -22px;
+    width: 16px;
+    height: 16px;
+    background: red;
+    border-radius: 3px;
+    -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.controller span::after {
+    content: "";
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+    top: 1px;
+    left: -18px;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+
+.controller input {
+    opacity: 0.01;
+    height: 0;
+}
+
+.controller input:checked + span:after {
+    opacity: 1;
+}
